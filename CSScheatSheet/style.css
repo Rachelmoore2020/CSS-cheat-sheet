@@ -1,0 +1,231 @@
+
+* {
+    /* zero out the default margins and padding on all */
+    margin:0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f4f4f4;
+    color: #555555;
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    /*same as above*/
+    font: normal 16px Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+    margin: 0;
+}
+/* removes the underline and color from all links */
+a {
+    text-decoration: none;
+    color:#000;
+}
+a:hover {
+    color: orangered;
+}
+
+a:active {
+    color:green;
+}
+a:visited {
+    color: greenyellow;
+}
+
+.container {
+    width: 80%;
+    margin:auto;
+}
+
+.button {
+    background-color: #333;
+    color:#fff;
+    padding: 10px 15px;
+    border:none;
+}
+
+.clr{
+    clear:both;
+}
+
+.box-1 {
+    background-color: #333;
+    color:#fff;
+    border-right: 5px red solid;
+    /* you must put solid, otherwise it wont show up */
+    border-bottom: 12px teal dashed;
+    border-left: 10px yellow solid;
+    padding: 20px 5px;
+    margin-top: 25px;
+}
+
+/* margin: top, right, bottom, left 
+also if top and bottom and left and right are the same
+we can say: margin: 5px 10px 
+if all same: margin: 5px */
+
+
+ /* style any h1 within the box-1 class */
+.box-1 h1 {
+    font-family: Tahoma;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    letter-spacing: 0.2em;
+    word-spacing: 1em;
+    
+}
+
+.box-2 {
+    border: 3px dotted #ccc;
+    padding: 20px;
+    margin: 20px 20px;
+
+}
+.box-2 p {
+    margin: 20px 0 20px 0;
+
+}
+
+.categories {
+    border: gray 1px solid;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.categories h2 {
+    text-align: center;
+}
+
+.categories ul {
+    padding: 0px;
+    padding-left: 20px;
+    list-style: square;
+    list-style: none;
+}
+
+.categories li {
+    padding-bottom: 6px;
+   border-bottom: dotted 1px #333;
+   list-style-image: url('./images/check.png');
+}
+
+.my-form {
+    padding: 20px;
+}
+
+.my-form .form-group {
+    padding-bottom: 15px;
+}
+
+    /* labels and inputs are inline, to put the input on a new line do the following */
+.my-form label {
+    display: block;
+}
+
+/* [type="text"] will target all inputs with type of input, thus avoiding the button because we dont want the button width to be 100%*/
+.my-form input[type="text"] {
+    padding: 8px;
+    width: 100%;
+}
+.my-form textarea {
+    padding: 8px;
+    width: 100%;
+}
+
+/* the following was replaced by global .button above */
+/* .my-form input[type="submit"] {
+    background-color: #333;
+    color:#fff;
+    padding: 10px 15px;
+    border:none;
+} */
+
+.block {
+    float: left;
+    width: 33.3%;
+    /* the following 2 lines would cause the headings to not fit anymore because 33.3% is just enough width. When you add padding or borders, then the div goes over 33.3% */
+    border: 1px solid #ccc;
+    padding:10px;
+    /* the following line corrects this by making the 33.3% take into account the border and the padding. */
+    box-sizing: border-box;
+/* When you use floats, you must add a clearfix or clear otherwise everything subsequent will also float left. */
+}
+
+#main-block{
+    float:left;
+    width:70%;
+    padding:15px;
+    box-sizing: border-box;
+}
+
+#sidebar{
+    float:right;
+    width:30%;
+    background-color: #333;
+    color:#fff;
+    padding:15px;
+    box-sizing: border-box;
+}
+
+/* Media query to remove remove the side by side positioning of the main block and sidebar. On small screens, they will stack on top of each other: */
+@media(max-width:600px) {
+    #main-block{ 
+        width: 100%;
+        float:none;
+}
+
+    #sidebar{
+        width: 100%;
+        float:none;
+    }
+} 
+
+.p-box{
+    width:100%;
+    height:300px;
+    border: 1px solid black;
+    margin-top: 30px;
+    position:relative;
+    background-image:url('./images/bgimage.jpg');
+    /* following line pushes the start of the image to 100 200, but with repeat. */
+    background-position:100px 200px;
+    /* following line removes repeat so image starts at specified position with nothing in the areas before 100 200 */
+    background-repeat: no-repeat;
+    /* dont forget, following line will override previous lines of code */
+    background-position: center center;
+    background-size: 100%;
+}
+
+
+.p-box h1{
+    position: absolute;
+    top:40px;
+    left:200px;
+}
+
+.p-box h2{
+    position: absolute;
+    top:100px;
+    left:20%;
+}
+
+.fix-me{
+    position: fixed;
+    top:400px;
+}
+
+.My-list li:first-child{
+    background: red ;
+}
+.My-list li:last-child{
+    background: blue ;
+}
+.My-list li:nth-child(5){
+    background: yellow ;
+}
+.My-list li:nth-child(even){
+    background: gray ;
+}
